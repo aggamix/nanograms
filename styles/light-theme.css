@@ -1,0 +1,171 @@
+@font-face {
+  font-family: 'Chakra 400';
+  src: url(../assets/font/Chakra_Petch/ChakraPetch-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Chakra 600';
+  src: url(../assets/font/Chakra_Petch/ChakraPetch-SemiBold.ttf);
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Chakra 700';
+  src: url(../assets/font/Chakra_Petch/ChakraPetch-Bold.ttf);
+  font-weight: 700;
+}
+
+body{
+  background-color: #F5F3F3;
+}
+.game-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 40px;
+  margin: 40px;
+  font-family: 'Chakra 400';
+}
+.nanogram {
+  display: flex;
+  justify-content: center;
+}
+.nanorgam__field {
+  display: grid;
+  grid-template-areas:
+    'empty top-hint'
+    'left-hint square-cells';
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+}
+.nanorgam__field__empty {
+  grid-area: empty;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 3px;
+}
+.nanorgam__field__empty__hint{
+  font-size: 25px;
+}
+.nanorgam__field__top-hint {
+  grid-area: top-hint;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border: solid 3px;
+}
+.nanorgam__field__left-hint {
+  grid-area: left-hint;
+  display: grid;
+  border: solid 3px;
+}
+.nanorgam__field__playing-field {
+  grid-area: square-cells;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border: solid 3px;
+}
+.nanorgam__field__cell {
+  width: 60px;
+  height: 60px;
+  border: solid 1.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Chakra 600';
+  font-size: 30px;
+}
+.nanorgam__field__cell-black {
+  background-color: black;
+}
+.modal-window{
+  position: absolute;
+  top: 45%;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border: 5px solid #9B9B9B;
+  background-color: blanchedalmond;
+}
+.modal-window__text{
+  text-align: center;
+  font-size: 25px;
+}
+.modal-window__result{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.modal-window__result__item{
+  margin: 0;
+}
+.modal-window__button{
+  max-width: max-content;
+  font-family: 'Chakra 600';
+  font-size: 15px;
+  border: 3px solid #9B9B9B;
+  border-radius: 10px;
+  background-color: #BDBDBD;
+}
+.modal-window__button:hover{
+  background-color: blanchedalmond;
+}
+.level-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  font-family: 'Chakra 600';
+  font-size: 30px;
+}
+.level-menu__list {
+  font-family: 'Chakra 400';
+  font-size: 20px;
+  border: 5px solid #9B9B9B;
+  border-radius: 10px;
+}
+.level-menu__list:hover{
+  border: 5px solid #BDBDBD;
+  background-color: #9B9B9B;
+}
+.buttons-block{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.ordinary-style__button{
+  max-width: max-content;
+  height: 50px;
+  font-family: 'Chakra 400';
+  font-size: 20px;
+  border: 5px solid #9B9B9B;
+  border-radius: 10px;
+  background-color: #BDBDBD;
+}
+.ordinary-style__button:hover{
+  border: 5px solid #BDBDBD;
+  background-color: #9B9B9B;
+}
+.timer-block{
+  font-family: 'Chakra 700';
+  font-size: 50px;
+}
+.timer-block__time{
+  margin: 0;
+}
+@media screen and (max-width: 500px) {
+  .game-section {
+    row-gap: 20px;
+    margin: 20px;
+  }
+  .nanorgam__field__cell {
+    width: 11vw;
+    height: 11vw;
+  }
+  .nanorgam__field__empty__hint{
+    font-size: 5vw;
+  }
+}
